@@ -46,7 +46,7 @@ class DashboardController extends Controller
         $UserGraph = $this->getUserGraph();
 
         // If user is authenticated then show dashboard page on /admin url
-        return view('dashboard.index', get_defined_vars());
+        return view('laravel-admin::dashboard.index', get_defined_vars());
     }
 
     /*
