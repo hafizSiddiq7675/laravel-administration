@@ -39,12 +39,12 @@
 </head>
 
 <body class="">
-    @include('layout.header')
+    @include('laravel-admin::layout.header')
 
     <div class="wrapper">
 
         <!-- Sidebar -->
-        @include('layout.sidebar')
+        @include('laravel-admin::layout.sidebar')
 
         <!-- Page Content -->
         <div id="main-content">
@@ -70,7 +70,7 @@
 
     </div>
 
-@include('layout.footer')
+@include('laravel-admin::layout.footer')
 </body>
 
 </html>

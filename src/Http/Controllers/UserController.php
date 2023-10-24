@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -40,7 +41,7 @@ class UserController extends Controller
                 ->make(true);
         }
 
-        return view('users.list'); // Replace 'users.index' with the actual view name for your DataTable
+        return view('laravel-admin::users.list'); // Replace 'users.index' with the actual view name for your DataTable
     }
 
     /**

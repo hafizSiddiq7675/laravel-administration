@@ -1,4 +1,4 @@
-@extends('layout.dashboard')
+@extends('laravel-admin::layout.dashboard')
 
 @section('css')
         <!-- Include required CSS files -->

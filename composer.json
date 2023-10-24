@@ -6,7 +6,13 @@
     "autoload": {
         "psr-4": {
             "Bitsoftsol\\LaravelAdministration\\": "src/"
-        }
+        },
+        "files": [
+            "src/Helpers/LaravelAdminConstants.php",
+            "src/Helpers/LaravelAdminHelper.php",
+            "src/Helpers/LaravelAdminApiHelper.php",
+            "src/Helpers/LaravelAdminResponse.php"
+        ]
     },
     "minimum-stability": "dev",
     "require": {

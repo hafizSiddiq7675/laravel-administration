@@ -62,13 +62,17 @@ class LaravelAdminServiceProvider extends ServiceProvider
             __DIR__.'/public' => public_path('Bitsoftsol/LaravelAdministration'),
         ], 'public');
 
-        $this->publishes([
-            __DIR__.'/database/migrations' => database_path('migrations'),
-        ], 'migrations');
+        // $this->publishes([
+        //     __DIR__.'/database/migrations' => database_path('migrations'),
+        // ], 'migrations');
 
 
         $this->publishes([
             __DIR__.'/database/seeders' => database_path('seeders'),
+        ], 'seeders');
+
+        $this->publishes([
+            __DIR__.'/Http/Controllers/Auth' => app_path('Http/Controllers/Auth'),
         ], 'seeders');
 
 
