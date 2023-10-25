@@ -27,14 +27,15 @@ model id and set that model ID into Postman attached collection and test the all
 
 You can install by performing these following steps.
 <ol>
-    <li>Create Laravel Project - composer create-project laravel/laravel LaravelAdministration</li>
-    <li>Run Command - composer require bitsoftsol/laravel-administration</li>
-    <li>Add <b>Bitsoftsol\LaravelAdministration\LaravelAdminServiceProvider::class</b> in providers array within app.php
+    <li>Create Laravel Project - <b>composer create-project laravel/laravel LaravelAdministration</b></li>
+    <li>Run Command - <b>composer require bitsoftsol/laravel-administration</b></li>
+    <li>Add this line inside providers array within app.php -
+        <b>Bitsoftsol\LaravelAdministration\LaravelAdminServiceProvider::class</b>
     </li>
-    <li>Run Command - <b>php artisan vendor:publish </b> and Select LaravelAdminServiceProvider</li>
-    <li>Run Command - <b>npm install</b> <b>npm run dev</b></li>
+    <li>Run Command and Select LaravelAdminServiceProvider - <b>php artisan vendor:publish </b></li>
+    <li>Run Commands - <b>npm install, npm run dev</b></li>
     <li>Run Command - <b>php artisan migrate --seed</b></li>
-    <li>Add <b>Auth::routes();</b> inside web.php</li>
+    <li>Add this line inside web.php - <b>Auth::routes();</b></li>
     <li>Serve Project - <b>php artisan serve</b></li>
 </ol>
 
