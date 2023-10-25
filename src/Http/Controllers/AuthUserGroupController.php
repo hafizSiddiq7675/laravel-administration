@@ -62,7 +62,7 @@ class AuthUserGroupController extends Controller
                 ->make(true);
         }
 
-        return view('auth_user_group.list'); // Replace 'users.index' with the actual view name for your DataTable
+        return view('laravel-admin::auth_user_group.list'); // Replace 'users.index' with the actual view name for your DataTable
     }
 
     /**
@@ -73,7 +73,7 @@ class AuthUserGroupController extends Controller
         // List of all groups that can be assigned to any user
         $auth_groups = AuthGroup::all();
         $users = User::all();
-        return view('auth_user_group.create', compact('auth_groups', 'users'));
+        return view('laravel-admin::auth_user_group.create', compact('auth_groups', 'users'));
     }
 
     /**
@@ -144,7 +144,7 @@ class AuthUserGroupController extends Controller
         // All groups selected by the User
         $choosen_groups = AuthGroup::whereIn('id', $group_user->auth_user_groups->pluck('group_id')->toArray())->get();
 
-        return view('auth_user_group.create', compact('auth_groups','group_user', 'users', 'choosen_groups'));
+        return view('laravel-admin::auth_user_group.create', compact('auth_groups','group_user', 'users', 'choosen_groups'));
     }
 
     /**

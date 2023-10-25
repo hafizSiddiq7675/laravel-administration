@@ -23,8 +23,8 @@ class LaravelAdminController extends Controller
     private $default_view, $base_folder;
     public function __construct()
     {
-        $this->default_view = 'laravel_admin.crud.';
-        $this->base_folder = 'laravel_admin.';
+        $this->default_view = 'laravel-admin::laravel_admin.crud.';
+        $this->base_folder = 'laravel-admin::laravel_admin.';
     }
     /**
      * Display a listing of the resource.

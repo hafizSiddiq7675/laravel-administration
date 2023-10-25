@@ -1,4 +1,4 @@
-@extends('layout.dashboard')
+@extends('laravel-admin::layout.dashboard')
 
 @section('css')
     <meta name="csrf-token" content="{{ csrf_token() }}">

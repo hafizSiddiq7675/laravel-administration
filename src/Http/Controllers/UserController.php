@@ -49,7 +49,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+        return view('laravel-admin::users.create');
     }
 
     /**
@@ -147,7 +147,7 @@ class UserController extends Controller
     public function edit(string $id)
     {
         $user = User::where('id', $id)->first();
-        return view('users.create', compact('user'));
+        return view('laravel-admin::users.create', compact('user'));
     }
 
     /**

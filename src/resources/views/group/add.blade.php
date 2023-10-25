@@ -1,4 +1,4 @@
-@extends('layout.dashboard')
+@extends('laravel-admin::layout.dashboard')
 @section('content')
     <section>
         <div class="container">
@@ -125,7 +125,7 @@
 @section('script')
     {{-- search --}}
     <script>
-        //avaialbel list 
+        //avaialbel list
         function myFunction() {
             var input, filter, ul, li, i, txtValue;
             input = document.getElementById('myAvailableSearch');

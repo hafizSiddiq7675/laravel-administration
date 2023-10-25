@@ -20,9 +20,10 @@ Route::middleware(['auth:sanctum'])->group(function() {
     Route::prefix('crud')->group(function() {
         Route::get('models', [LaravelAdminApiController::class, 'models']);
 
-        Route::resource('{crud}', LaravelAdminApiController::class)
-            ->parameters(['{crud}' => 'id'])
-            ->names('crud');
+        Route::get('{crud}', [LaravelAdminApiController::class, 'index'])->name('crud.index');
+        Route::post('{crud}', [LaravelAdminApiController::class, 'store'])->name('crud.store');
+        Route::get('{crud}/{id}', [LaravelAdminApiController::class, 'show'])->name('crud.show');
+        Route::delete('{crud}/{id}', [LaravelAdminApiController::class, 'destroy'])->name('crud.destroy');
     });
 
 });

@@ -2,7 +2,6 @@
 
 use Bitsoftsol\LaravelAdministration\Http\Controllers\LaravelAdmin\CrudSchemaController;
 use Bitsoftsol\LaravelAdministration\Http\Controllers\LaravelAdmin\LaravelAdminController;
-
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,11 +23,11 @@ Route::middleware('auth')->group(function() {
 
     Route::prefix('crud')->group(function() {
         Route::get('', [LaravelAdminController::class, 'crud']);
-
-        // dynamic routing for the CRUD operations
-        Route::resource('{type}', LaravelAdminController::class)
-            ->parameters(['{type}' => 'id'])
-            ->names('type');
+        Route::get('{type}', [LaravelAdminController::class, 'index'])->name('type.index');
+        Route::get('{type}/create', [LaravelAdminController::class, 'create'])->name('type.create');
+        Route::post('{type}', [LaravelAdminController::class, 'store'])->name('type.store');
+        Route::delete('{type}/{id}', [LaravelAdminController::class, 'destroy'])->name('type.destroy');
+        Route::get('{type}/{id}/edit', [LaravelAdminController::class, 'edit'])->name('type.edit');
     });
 
     // Routes for CRUD Schema

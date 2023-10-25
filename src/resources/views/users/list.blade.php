@@ -78,7 +78,7 @@
                             },
                             success: function(resp) {
                                 $(record).parents("tr").remove();
-                                swal("Poof! Category record has been deleted!", {
+                                swal("Poof! Data has been deleted!", {
                                     icon: "success",
                                 });
                                 //   window.location.reload();

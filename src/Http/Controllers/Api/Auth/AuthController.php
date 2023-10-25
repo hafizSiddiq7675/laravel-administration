@@ -3,7 +3,7 @@
 namespace Bitsoftsol\LaravelAdministration\Http\Controllers\Api\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Api\Auth\LoginRequest;
+use Bitsoftsol\LaravelAdministration\Http\Requests\Api\Auth\LoginRequest;
 use Bitsoftsol\LaravelAdministration\Models\User;
 use Exception;
 use Illuminate\Database\QueryException;

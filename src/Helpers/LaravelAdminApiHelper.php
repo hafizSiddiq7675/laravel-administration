@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Schema;
-use App\Traits\LaravelAdminAPI;
+use Bitsoftsol\LaravelAdministration\Traits\LaravelAdminAPI;
 
 function API_getLaravelAdminCrudList()
 {

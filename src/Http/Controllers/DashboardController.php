@@ -19,7 +19,6 @@ class DashboardController extends Controller
      */
     public function dashboard()
     {
-        logger("After = " . session()->getId());
         // If user is not authenticated then show login page on /admin url
         if(!Auth::check())
         {

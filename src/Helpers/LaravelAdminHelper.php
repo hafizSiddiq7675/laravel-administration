@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\LaravelAdminModel;
-use App\Traits\LaravelAdmin;
+use Bitso\Models\LaravelAdminModel;
+use Bitsoftsol\LaravelAdministration\Traits\LaravelAdmin;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;

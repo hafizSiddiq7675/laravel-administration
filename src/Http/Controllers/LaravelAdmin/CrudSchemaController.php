@@ -21,8 +21,8 @@ class CrudSchemaController extends Controller
     private $default_view, $base_folder;
     public function __construct()
     {
-        $this->default_view = 'laravel_admin.crud_schema.';
-        $this->base_folder = 'laravel_admin.';
+        $this->default_view = 'laravel-admin::laravel_admin.crud_schema.';
+        $this->base_folder = 'laravel-admin::laravel_admin.';
     }
 
     /**
@@ -112,7 +112,7 @@ class CrudSchemaController extends Controller
             $model_write['laravel_admin_trait'] = "use LaravelAdmin;";
             $model_write['search_laravel_admin_trait'] = "\n" . "use LaravelAdmin;";
             $model_write['search_import_model'] = 'namespace App\Models;' . "\n";
-            $model_write['import_laravel_admin'] = "\n" . 'use App\Traits\LaravelAdmin;';
+            $model_write['import_laravel_admin'] = "\n" . 'use Bitsoftsol\LaravelAdministration\Traits\LaravelAdmin;';
             $model_write['get_file_content'] = file_get_contents($schema_model->model_file_path);
             $model_write = (object) $model_write;
 

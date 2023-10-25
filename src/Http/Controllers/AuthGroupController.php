@@ -6,6 +6,8 @@ use Bitsoftsol\LaravelAdministration\Models\AuthGroup;
 use Bitsoftsol\LaravelAdministration\Models\AuthGroupPermission;
 use Bitsoftsol\LaravelAdministration\Models\AuthPermission;
 use DataTables;
+use Exception;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -51,7 +53,7 @@ class AuthGroupController extends Controller
                 ->make(true);
         }
 
-        return view('group.list'); // Replace 'users.index' with the actual view name for your DataTable
+        return view('laravel-admin::group.list'); // Replace 'users.index' with the actual view name for your DataTable
     }
 
     /**
@@ -60,7 +62,7 @@ class AuthGroupController extends Controller
     public function create()
     {
         $auth_permissions = AuthPermission::all();
-        return view('group.create', compact('auth_permissions'));
+        return view('laravel-admin::group.create', compact('auth_permissions'));
     }
 
     /**
@@ -148,7 +150,7 @@ class AuthGroupController extends Controller
     {
         $auth_group = AuthGroup::where('id', $id)->first();
         $auth_permissions = AuthPermission::whereNotIn('id', $auth_group->auth_group_permissions->pluck('permission_id')->toArray())->get();
-        return view('group.create', compact('auth_permissions','auth_group'));
+        return view('laravel-admin::roup.create', compact('auth_permissions','auth_group'));
     }
 
     /**

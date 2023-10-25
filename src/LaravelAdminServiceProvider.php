@@ -31,12 +31,12 @@ class LaravelAdminServiceProvider extends ServiceProvider
         $this->app->make('Bitsoftsol\LaravelAdministration\Http\Controllers\Api\Auth\AuthController');
 
         // Controllers used in api_laravel_admin.php
-        $this->app->make('Bitsoftsol\LaravelAdministration\Http\Controllers\Api\LaravelAdmin\LaravelAdminApiController');
+        // $this->app->make('Bitsoftsol\LaravelAdministration\Http\Controllers\Api\LaravelAdmin\LaravelAdminApiController');
 
-        // Controllers used in laravel_admin.php file
-        $this->app->make('Bitsoftsol\LaravelAdministration\Http\Controllers\LaravelAdmin\CrudSchemaController');
+        // // Controllers used in laravel_admin.php file
+        // $this->app->make('Bitsoftsol\LaravelAdministration\Http\Controllers\LaravelAdmin\CrudSchemaController');
 
-        $this->app->make('Bitsoftsol\LaravelAdministration\Http\Controllers\LaravelAdmin\LaravelAdminController');
+        // $this->app->make('Bitsoftsol\LaravelAdministration\Http\Controllers\LaravelAdmin\LaravelAdminController');
 
         // $this->app->make('Bitsoftsol\LaravelAdministration\database\seeders\DatabaseSeeder');
 
@@ -53,9 +53,11 @@ class LaravelAdminServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // Load routes folder
-        $this->loadRoutesFrom(__DIR__.'/routes/routes.php');
+        // $this->loadRoutesFrom(__DIR__.'/routes/routes.php');
 
-        $this->loadRoutesFrom(__DIR__.'/routes/api.php');
+        // $this->loadRoutesFrom(__DIR__.'/routes/api_routes.php');
+
+        // $this->loadRoutesFrom(__DIR__.'/routes/laravel_admin.php');
 
         // Load public folder and publish to access static files
         $this->publishes([
@@ -81,13 +83,21 @@ class LaravelAdminServiceProvider extends ServiceProvider
         $this->loadSeeders($seed_list);
 
 
-        Route::middleware('laravel_admin')
+        Route::middleware('web')
+            ->namespace('BitsoftSol\\LaravelAdministration')
+            ->group((__DIR__.'\routes/web_routes.php'));
+
+        Route::middleware('web')
             ->prefix('admin')
             ->namespace('BitsoftSol\\LaravelAdministration')
             ->group((__DIR__.'\routes/laravel_admin.php'));
 
+        Route::middleware('api')
+            ->prefix('api')
+            ->namespace('BitsoftSol\\LaravelAdministration')
+            ->group((__DIR__.'\routes/api_routes.php'));
 
-        Route::middleware('api_laravel_admin')
+        Route::middleware('api')
             ->prefix('api/admin')
             ->namespace('BitsoftSol\\LaravelAdministration')
             ->group((__DIR__.'\routes/api_laravel_admin.php'));

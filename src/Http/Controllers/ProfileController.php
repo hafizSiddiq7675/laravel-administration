@@ -24,7 +24,7 @@ class ProfileController extends Controller
     public function changePasswordForm(Request $request)
     {
         try {
-            return view("pages.change_password");
+            return view("laravel-admin::pages.change_password");
 
         } catch (QueryException $e) {
 

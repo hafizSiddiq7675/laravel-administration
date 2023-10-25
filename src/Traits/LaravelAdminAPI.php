@@ -1,5 +1,5 @@
 <?php
-namespace App\Traits;
+namespace Bitsoftsol\LaravelAdministration\Traits;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
