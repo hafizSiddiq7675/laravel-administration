@@ -2,8 +2,8 @@
 
 namespace Bitsoftsol\LaravelAdministration\Models;
 
-use App\Traits\LaravelAdmin;
-use App\Traits\LaravelAdminAPI;
+use Bitsoftsol\LaravelAdministration\Traits\LaravelAdmin;
+use Bitsoftsol\LaravelAdministration\Traits\LaravelAdminAPI;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

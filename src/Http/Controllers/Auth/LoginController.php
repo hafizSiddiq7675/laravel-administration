@@ -75,8 +75,7 @@ class LoginController extends Controller
                 if($user->is_superuser)
                 {
                     Auth::login($user);
-                    logger("Before = " . session()->getId());
-                    return redirect()->to('admin/users')->withUser($user);
+                    return redirect()->to('/admin');
                 }
                 return redirect()->to("/admin")->with('error', 'Your account do not have permissions to access dashboard.');
 

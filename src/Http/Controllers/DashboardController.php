@@ -25,7 +25,7 @@ class DashboardController extends Controller
             $errors = [];
             return view("laravel-admin::auth.login ")->withErrors($errors);
         }
-        logger(session()->getId());
+
         // Fetch all users count
         $usersCount = User::get()->count();
 

@@ -4,8 +4,8 @@ namespace Bitsoftsol\LaravelAdministration\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\AuthGroupPermission;
-use App\Models\AuthUserGroup;
+use Bitsoftsol\LaravelAdministration\Models\AuthGroupPermission;
+use Bitsoftsol\LaravelAdministration\Models\AuthUserGroup;
 
 class AuthGroup extends Model
 {

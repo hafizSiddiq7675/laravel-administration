@@ -48,17 +48,6 @@ Route::get('hello', function(){
 // Auth Routes
 // Auth::routes();
 
-// Cutomize the AuthRoutes
-// Customize the routes with your custom controllers
-// Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-// Route::post('/login', [LoginController::class, 'login']);
-// Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-// Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-// Route::post('/register', [RegisterController::class, 'register']);
-// Route::get('/password/reset', [ResetPasswordController::class, 'showLinkRequestForm'])->name('password.request');
-// Route::post('/password/email', [ResetPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
-// Route::get('/password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
-// Route::post('/password/reset', [ResetPasswordController::class, 'reset']);
 
 Route::get('login', function () {
     return redirect()->to('admin');
@@ -72,9 +61,34 @@ Route::middleware(['web', 'auth'])->prefix('admin')->group(function() {
 
     Route::get('change-password', [ProfileController::class, "changePasswordForm"]);
     Route::post('change-password', [ProfileController::class, "changePassword"]);
-    Route::resource('users', UserController::class);
-    Route::resource('auth_groups', AuthGroupController::class);
-    Route::resource('auth_user_group', AuthUserGroupController::class);
+
+    // User Resource Routes
+    Route::get('users', [UserController::class, 'index'])->name('users.index');
+    Route::get('users/create', [UserController::class, 'create'])->name('users.create');
+    Route::post('users', [UserController::class, 'store'])->name('users.store');
+    Route::get('users/{user}', [UserController::class, 'show'])->name('users.show');
+    Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
+    Route::put('users/{user}', [UserController::class, 'update'])->name('users.update');
+    Route::delete('users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+
+    // Auth Group Resource Routes
+    Route::get('auth_groups', [AuthGroupController::class, 'index'])->name('auth_groups.index');
+    Route::get('auth_groups/create', [AuthGroupController::class, 'create'])->name('auth_groups.create');
+    Route::post('auth_groups', [AuthGroupController::class, 'store'])->name('auth_groups.store');
+    Route::get('auth_groups/{auth_group}', [AuthGroupController::class, 'show'])->name('auth_groups.show');
+    Route::get('auth_groups/{auth_group}/edit', [AuthGroupController::class, 'edit'])->name('auth_groups.edit');
+    Route::put('auth_groups/{auth_group}', [AuthGroupController::class, 'update'])->name('auth_groups.update');
+    Route::delete('auth_groups/{auth_group}', [AuthGroupController::class, 'destroy'])->name('auth_groups.destroy');
+
+    // Auth User Group Resource Routes
+    Route::get('auth_user_group', [AuthUserGroupController::class, 'index'])->name('auth_user_group.index');
+    Route::get('auth_user_group/create', [AuthUserGroupController::class, 'create'])->name('auth_user_group.create');
+    Route::post('auth_user_group', [AuthUserGroupController::class, 'store'])->name('auth_user_group.store');
+    Route::get('auth_user_group/{auth_user_group}', [AuthUserGroupController::class, 'show'])->name('auth_user_group.show');
+    Route::get('auth_user_group/{auth_user_group}/edit', [AuthUserGroupController::class, 'edit'])->name('auth_user_group.edit');
+    Route::put('auth_user_group/{auth_user_group}', [AuthUserGroupController::class, 'update'])->name('auth_user_group.update');
+    Route::delete('auth_user_group/{auth_user_group}', [AuthUserGroupController::class, 'destroy'])->name('auth_user_group.destroy');
+
 });
 
 

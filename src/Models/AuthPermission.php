@@ -4,7 +4,7 @@ namespace Bitsoftsol\LaravelAdministration\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\AppModel;
+use Bitsoftsol\LaravelAdministration\Models\AppModel;
 
 class AuthPermission extends Model
 {
