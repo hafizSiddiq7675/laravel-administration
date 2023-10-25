@@ -44,9 +44,9 @@ You can install by performing these following steps:
     <li>Congratulations! You have successfully installed laravel administration.</li>
 </ol>
 
-<h2>Usage Guide</h2>
+<h2>Usage Guide - Basic</h2>
 
-We will create CRUD of <b>Seller</b> in these following steps:
+We will perfom auto CRUD operations of <b>Seller</b> in these following steps:
 <ol>
     <li>Run command - <b>php artisan make:model Seller -m</b></li>
     <li>
@@ -121,7 +121,7 @@ We will create CRUD of <b>Seller</b> in these following steps:
         Listing of Seller API - <b>{{host}}/api/admin/crud/{{model_id}}</b>
     </li>
     <li>
-        Detail of Seller API - <b>{{host}}/api/admin/crud/{{model_id}}/2</b> , 2 represents the seller  of id = 2
+        Detail of Seller API - <b>{{host}}/api/admin/crud/{{model_id}}/2</b> , 2 represents the seller detail of id = 2
     </li>
     <li>
         Store Seller API - <b>{{host}}/api/admin/crud/{{model_id}}</b>
@@ -131,10 +131,31 @@ We will create CRUD of <b>Seller</b> in these following steps:
         form-data inside body tab on postman.
     </li>
     <li>
-        Delete Seller API - <b>{{host}}/api/admin/crud/{{model_id}}/3</b> , 2 represents the seller of id = 2
+        Delete Seller API - <b>{{host}}/api/admin/crud/{{model_id}}/3</b> , 2 represents the seller detail of id = 2
     </li>
     <li>
         Congratulations! We have all APIs to perform crud operations of Seller without any coding.
+    </li>
+</ol>
+
+<h2>Usage Guide - Advance</h2>
+We will perform auto CRUD operations of <b>Seller</b> using <u>Laravel Administration Schema Builder</u> in these
+following
+steps:
+<ol>
+    <li>Open this url <b>(host)/admin/crud-schema</b></li>
+    <li>Click on <b>Add New</b> Button</li>
+    <li>Enter the model name like <b>Seller</b> and Submit</li>
+    <li>When you submit, Seller model and migration will be created within your app</li>
+    <li>
+        Click on Create Schema of Seller and define seller table fields like <b>name, email, city, country,
+            profile_image</b>
+    </li>
+    <li>
+        If you want to use LaravelAdmin trait in your model then select the checkbox and click on submit.
+    </li>
+    <li>
+        Open Editor button will be shown, click on this button.
     </li>
 </ol>
 
