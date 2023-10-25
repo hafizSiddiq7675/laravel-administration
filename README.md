@@ -34,6 +34,7 @@ You can install by performing these following steps.
     </li>
     <li>Run Command and Select LaravelAdminServiceProvider - <b>php artisan vendor:publish </b></li>
     <li>Run Commands - <b>npm install, npm run dev</b></li>
+    <li>Set your database name in .env</li>
     <li>Run Command - <b>php artisan migrate --seed</b></li>
     <li>Add this line inside web.php - <b>Auth::routes();</b></li>
     <li>Serve Project - <b>php artisan serve</b></li>
