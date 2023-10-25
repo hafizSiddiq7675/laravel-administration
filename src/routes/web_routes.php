@@ -23,10 +23,6 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return redirect()->to('admin');
-});
-
 
 // Clear Cache Route
 Route::get('clear-cache/{flag?}', function($flag = null){
