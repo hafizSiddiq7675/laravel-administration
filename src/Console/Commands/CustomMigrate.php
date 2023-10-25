@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Console\Commands;
+namespace Bitsoftsol\LaravelAdministration\Console\Commands;
 
 use Illuminate\Support\Facades\Schema;
-use App\Models\AppModel;
-use App\Models\AuthPermission;
+use Bitsoftsol\LaravelAdministration\Models\AppModel;
+use Bitsoftsol\LaravelAdministration\Models\AuthPermission;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;

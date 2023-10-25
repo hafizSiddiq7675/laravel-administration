@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Listeners;
+namespace Bitsoftsol\LaravelAdministration\Listeners;
 
-use App\Models\AppModel;
-use App\Models\AuthPermission;
+use Bitsoftsol\LaravelAdministration\Models\AppModel;
+use Bitsoftsol\LaravelAdministration\Models\AuthPermission;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Database\Events\MigrationsEnded;
 use Illuminate\Queue\InteractsWithQueue;

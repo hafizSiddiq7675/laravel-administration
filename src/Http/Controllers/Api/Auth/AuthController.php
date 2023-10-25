@@ -98,7 +98,6 @@ class AuthController extends Controller
         try{
 
             DB::beginTransaction();
-
             // Get user who requested the logout
             $user = Auth::user();
 

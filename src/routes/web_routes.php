@@ -23,7 +23,6 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-
 // Clear Cache Route
 Route::get('clear-cache/{flag?}', function($flag = null){
     Artisan::call('optimize');
@@ -37,8 +36,8 @@ Route::get('api/doc', function(){
     return redirect()->to(url('api/documentation'));
 });
 
-Route::get('hello', function(){
-    dd("Hello is running");
+Route::get('home', function(){
+    return redirect()->to('/admin');
 });
 
 // Auth Routes

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Console\Commands;
+namespace Bitsoftsol\LaravelAdministration\Console\Commands;
 
 use Illuminate\Console\Command;
-use App\Models\User;
+use Bitsoftsol\LaravelAdministration\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -41,7 +41,7 @@ class CreateSuperuser extends Command
         }
         $password = $this->secret('Password:');
         $confirmPassword = $this->secret('Confirm Password:');
-        
+
         $validator = Validator::make([
             'username' => $username,
             'email' => $email,
@@ -74,6 +74,6 @@ class CreateSuperuser extends Command
         ]);
 
         $this->info('Superuser created successfully.');
-        
+
     }
 }

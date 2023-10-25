@@ -5,6 +5,7 @@ namespace Bitsoftsol\LaravelAdministration;
 use Database\Seeders\UserSeeder;
 use Database\Seeders\DatabaseSeeder;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
@@ -14,21 +15,27 @@ class LaravelAdminServiceProvider extends ServiceProvider
     /**
      * Register services.
      */
+
+    // protected $listen = [
+    //     'Illuminate\Database\Events\MigrationsEnded' => [
+    //         'Listeners\UpdateAppModelAndAuthPermission',
+    //     ],
+    // ];
     public function register(): void
     {
         // Controllers web.php
-        $this->app->make('Bitsoftsol\LaravelAdministration\Http\Controllers\DashboardController');
+        // $this->app->make('Bitsoftsol\LaravelAdministration\Http\Controllers\DashboardController');
 
-        $this->app->make('Bitsoftsol\LaravelAdministration\Http\Controllers\UserController');
+        // $this->app->make('Bitsoftsol\LaravelAdministration\Http\Controllers\UserController');
 
-        $this->app->make('Bitsoftsol\LaravelAdministration\Http\Controllers\AuthGroupController');
+        // $this->app->make('Bitsoftsol\LaravelAdministration\Http\Controllers\AuthGroupController');
 
-        $this->app->make('Bitsoftsol\LaravelAdministration\Http\Controllers\AuthUserGroupController');
+        // $this->app->make('Bitsoftsol\LaravelAdministration\Http\Controllers\AuthUserGroupController');
 
-        $this->app->make('Bitsoftsol\LaravelAdministration\Http\Controllers\ProfileController');
+        // $this->app->make('Bitsoftsol\LaravelAdministration\Http\Controllers\ProfileController');
 
-        // Controllers used in api.php
-        $this->app->make('Bitsoftsol\LaravelAdministration\Http\Controllers\Api\Auth\AuthController');
+        // // Controllers used in api.php
+        // $this->app->make('Bitsoftsol\LaravelAdministration\Http\Controllers\Api\Auth\AuthController');
 
         // Controllers used in api_laravel_admin.php
         // $this->app->make('Bitsoftsol\LaravelAdministration\Http\Controllers\Api\LaravelAdmin\LaravelAdminApiController');
@@ -44,6 +51,14 @@ class LaravelAdminServiceProvider extends ServiceProvider
 
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
 
+        // Register your command
+        $this->commands([
+            Console\Commands\CustomMigrate::class,
+            Console\Commands\CreateSuperuser::class,
+            Console\Commands\DeleteAllNewModels::class,
+        ]);
+
+        // Artisan::call('migrate:update-app-models-auth-permission');
 
     }
 
@@ -81,6 +96,8 @@ class LaravelAdminServiceProvider extends ServiceProvider
         $seed_list = ['/database/seeders/UserSeeder.php'];
 
         $this->loadSeeders($seed_list);
+
+        $this->app->events->listen('Illuminate\Database\Events\MigrationsEnded', 'Bitsoftsol\LaravelAdministration\Listeners\UpdateAppModelAndAuthPermission');
 
 
         Route::middleware('web')
