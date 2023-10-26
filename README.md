@@ -282,8 +282,7 @@ After editing the model and migration files, you can click on the 'Migrate' butt
   - If you have included the 'LaravelAdminAPI' Trait in your Seller model, you can access Seller CRUD operation APIs using the Postman Collection.
 
 
-
-
+__Congratulations!__, you've now completed the LaravelAdministration documentation. You're all set to make the most of this powerful tool for Laravel development. Happy coding!
 
 
 
