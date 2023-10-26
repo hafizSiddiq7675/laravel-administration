@@ -264,7 +264,7 @@ Upon successful creation, you'll be redirected to the Schema Builder list. Here,
 After creating the schema, you'll find an 'Open Editor' button in the 'Seller' row within the Schema Builder listing. Clicking this button will redirect you to a Visual Code Editor view, allowing you to edit the 'Seller' migration and model files.
 
 - **LaravelAdminAPI and LaravelAdmin Traits:**
-  - In the live editor, you can use the 'LaravelAdminAPI' Trait if required, and include the 'LaravelAdmin' Trait if desired. These traits enhance the functionality of your 'Seller' model.
+  - In the live editor, you can use the 'LaravelAdminAPI' Trait if required, and include the 'LaravelAdmin' Trait if desired. These traits will enable you to access CRUD routes for the Seller model, both through web and API interfaces.
 
 - **Defining Fillable Fields:**
   - Set the fields of the 'sellers' table in the `fillable` array. These fields will be displayed in the Seller listing view.
